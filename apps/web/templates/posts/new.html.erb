@@ -1,0 +1,35 @@
+<h2>Add post</h2>
+
+<% unless params.valid? %>
+  <div class="errors">
+    <h3>There was a problem with your submission</h3>
+    <ul>
+      <% params.errors.each do |error| %>
+        <li><%= error.attribute_name %> is required</li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%=
+  form_for :post, routes.posts_path do
+    div class: 'input' do
+      label      :title
+      text_field :title
+    end
+
+    div class: 'input' do
+      label      :body
+      text_area :body
+    end
+
+    div class: 'input' do
+      label      :author
+      text_field :author
+    end
+
+    div class: 'controls' do
+      submit 'Create Post'
+    end
+  end
+%>
