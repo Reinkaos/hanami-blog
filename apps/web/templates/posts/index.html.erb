@@ -1,0 +1,15 @@
+<h2>All posts</h2>
+
+<div id="posts">
+  <% if posts.any? %>
+    <% posts.each do |post| %>
+      <div class="post">
+        <h2><%= post.title %></h2>
+        <p><%= post.body %></p>
+        <i>By <%= post.author %></i>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="placeholder">There are no posts yet.</p>
+  <% end %>
+</div>

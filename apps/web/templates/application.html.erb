@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= favicon %>
+
+    <!-- include CSS -->
+    <%= stylesheet 'bootstrap' %>
+
+  </head>
+  <body>
+    <div class='container'>
+      <h1>Blog</h1>
+      <%= yield %>
+    </div>
+
+    <!-- include JS -->
+    <%= javascript 'jquery' %>
+    <%= javascript 'bootstrap' %>
+
+  </body>
+</html>
