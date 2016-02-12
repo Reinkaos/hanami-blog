@@ -14,11 +14,10 @@ module Web::Controllers::Posts
     end
 
     def call(params)
-      if params.valid?
-        @post = PostRepository.create(Post.new(params[:post]))
+      return unless params.valid?
+      @post = PostRepository.create(Post.new(params[:post]))
 
-        redirect_to routes.posts_path
-      end
+      redirect_to routes.posts_path
     end
   end
 end
